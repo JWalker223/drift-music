@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PlayerProvider } from "@/components/PlayerProvider";
 import { Layout } from "@/components/Layout";
-import { Home } from "@/pages/Home";
 import { Library } from "@/pages/Library";
 import { Playlists } from "@/pages/Playlists";
 import NotFound from "./pages/NotFound";
@@ -21,7 +20,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
+              <Route index element={<Library />} />
               <Route path="library" element={<Library />} />
               <Route path="playlists" element={<Playlists />} />
             </Route>

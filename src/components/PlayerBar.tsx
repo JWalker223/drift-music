@@ -1,11 +1,11 @@
 import React from 'react';
-import { Play, Pause, SkipBack, SkipForward, Volume2, Heart } from 'lucide-react';
+import { Play, Pause, SkipBack, SkipForward, Volume2, Heart, Maximize2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { usePlayerContext } from '@/components/PlayerProvider';
 
 export const PlayerBar: React.FC = () => {
-  const { playerState, togglePlayPause, nextTrack, previousTrack, setVolume, seekTo, formatTime } = usePlayerContext();
+  const { playerState, togglePlayPause, nextTrack, previousTrack, setVolume, seekTo, formatTime, setShowNowPlaying } = usePlayerContext();
   
   const { currentTrack, isPlaying, currentTime, volume } = playerState;
 
@@ -23,7 +23,8 @@ export const PlayerBar: React.FC = () => {
           <img 
             src={currentTrack.albumArt} 
             alt={currentTrack.album}
-            className="w-12 h-12 rounded-lg object-cover"
+            className="w-12 h-12 rounded-lg object-cover cursor-pointer"
+            onClick={() => setShowNowPlaying(true)}
           />
           <div className="min-w-0">
             <p className="text-sm font-medium text-foreground truncate">
@@ -35,6 +36,13 @@ export const PlayerBar: React.FC = () => {
           </div>
           <Button variant="ghost" size="sm">
             <Heart size={16} />
+          </Button>
+          <Button 
+            variant="ghost" 
+            size="sm"
+            onClick={() => setShowNowPlaying(true)}
+          >
+            <Maximize2 size={16} />
           </Button>
         </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Search, Home, Library, ListMusic, Heart } from 'lucide-react';
+import { Search, Library, ListMusic } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -14,20 +14,6 @@ export const Navigation: React.FC = () => {
           </h1>
           
           <div className="hidden md:flex items-center space-x-4">
-            <NavLink 
-              to="/" 
-              className={({ isActive }) =>
-                `flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors ${
-                  isActive 
-                    ? 'bg-music-hover text-music-primary' 
-                    : 'text-muted-foreground hover:text-foreground hover:bg-music-hover'
-                }`
-              }
-            >
-              <Home size={18} />
-              <span>Home</span>
-            </NavLink>
-            
             <NavLink 
               to="/library" 
               className={({ isActive }) =>
