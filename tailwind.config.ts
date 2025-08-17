@@ -52,13 +52,6 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				music: {
-					primary: 'hsl(var(--music-primary))',
-					secondary: 'hsl(var(--music-secondary))',
-					accent: 'hsl(var(--music-accent))',
-					'player-bg': 'hsl(var(--music-player-bg))',
-					hover: 'hsl(var(--music-hover))'
-				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
